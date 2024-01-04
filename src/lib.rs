@@ -6,3 +6,6 @@ pub use binary_search::*;
 
 pub mod crystal_balls;
 pub use crystal_balls::*;
+
+pub mod bubble_sort;
+pub use bubble_sort::*;
