@@ -13,12 +13,28 @@ pub struct Queue<T> {
 }
 
 impl<T> Queue<T> {
-    pub fn new() - Self {
+    pub fn new() -> Self {
         Queue {
         length: 0,
         head: None,
         tail: None,
         }
     }
+
+    pub fn enqueue(&mut self, item: T) {
+        let node = Box::new(Node {
+            value: item,
+            next: None,
+        });
+
+        self.length += 1;
+
+        if self.tail.is_none() {
+            self.tail = Some(node.clone());
+            self.head = Some(node);
+            return;
+        }
+    }
 }
+
 
