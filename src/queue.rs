@@ -35,6 +35,19 @@ impl<T> Queue<T> {
             return;
         }
     }
+    
+    pub fn dequeue(&mut self) -> Option<T> {
+        if let Some(mut head) = self.head.take(){
+            self.length -= 1;
+            if let Some(next) = head.next.take(){
+                self.head = Some(next);
+            } else {
+                self.tail = None;
+            }
+            Some(head.value)
+        } else {
+            None }
+    }
 }
 
 
