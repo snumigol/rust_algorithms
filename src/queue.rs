@@ -34,6 +34,12 @@ impl<T> Queue<T> {
             self.head = Some(node);
             return;
         }
+
+        if let Some(ref mut tail) = self.tail {
+            tail.next = Some(node);
+            self.tail = tail.next.clone();
+        }
+        
     }
     
     pub fn dequeue(&mut self) -> Option<T> {
@@ -48,6 +54,15 @@ impl<T> Queue<T> {
         } else {
             None }
     }
+
+    pub fn peek(&self) -> usize {
+        self.head.as_ref().map(|node| &node.value)
+    }
+
+    pub fn length(&self) -> usize {
+        self.length
+    }
 }
+
 
 
