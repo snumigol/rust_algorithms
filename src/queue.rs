@@ -55,7 +55,7 @@ impl<T> Queue<T> {
             None }
     }
 
-    pub fn peek(&self) -> usize {
+    pub fn peek(&self) -> Option<&T> {
         self.head.as_ref().map(|node| &node.value)
     }
 
@@ -64,5 +64,25 @@ impl<T> Queue<T> {
     }
 }
 
+#[cfg(test)]
 
+mod test {
+    use super::*;
+
+    #[test]
+    fn ex1() {
+        let mut queue: Queue<i32> = Queue::new();
+    
+        queue.enqueue(1);
+        queue.enqueue(2);
+        queue.enqueue(3);
+
+        assert_eq!(queue.peek(), Some(&1));
+
+        assert_eq!(queue.dequeue(), Some(1));
+
+        assert_eq!(queue.length(), 2);
+
+    }
+}
 
