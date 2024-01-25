@@ -22,7 +22,7 @@ mod test {
         }
     #[test]
     fn ex2() {
-        assert_eq!(linear_search(&[1,2,3,4], 4), false);
+        assert_eq!(linear_search(&[1,2,3,4], 55555), false);
         }
 
 

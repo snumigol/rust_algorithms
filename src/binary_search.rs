@@ -11,7 +11,7 @@ pub fn binary_search(haystack: Vec<i32>, needle: i32) -> bool {
         } else if haystack[mid] < needle {
             low = mid + 1;
         } else {
-            high = mid - 1;
+            high = mid;
         }
 
     }
@@ -24,7 +24,7 @@ mod test{
     
     #[test]
     fn ex1(){
-        assert_eq!(binary_search(vec![1,2,3,4,5,6,7,8,9,10], 7), true);
+        assert_eq!(binary_search(vec![1,2,3,4,5,6,7,8,9,10], 10), true);
         }
     
     }

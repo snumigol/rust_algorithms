@@ -10,5 +10,3 @@ pub use crystal_balls::*;
 pub mod bubble_sort;
 pub use bubble_sort::*;
 
-pub mod queue;
-pub use queue::*;
